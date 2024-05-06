@@ -1,5 +1,6 @@
 import Question from "./models/Question";
 import QuizApp from "./models/Quiz";
+import QuestionService from "./services/QuestionService";
 import { GameMode } from "./types/enum/GameMode";
 import { QuestionMode } from "./types/enum/QuestionMode";
 import { IAnswer } from "./types/interfaces/IAnswer";
@@ -95,7 +96,6 @@ window.addEventListener('load', () => {
         const q = document.getElementById("txt-question") as HTMLInputElement;
         const btnCloseModal = document.getElementById("btnCloseModal") as HTMLButtonElement;
         if (!validateQuestionInput(q.value, questionAnswers)) {
-            alert("Please fill in the question and provide at least one answer with the correct option.");
             return;
         }
         const question = new Question(q.value);
@@ -229,6 +229,37 @@ window.addEventListener('load', () => {
     };
 
     const validateQuestionInput = (questionText: string, answers: IAnswer[]): boolean => {
+        // lege vraag
+        if (questionText === ""){
+            alert("Please fill in the question and provide at least one answer with the correct option.");
+            return false;
+        }
+        
+        // minimale lengte is 5 woorden 
+        const antwoordWoorden = questionText.split(' ');
+        if(antwoordWoorden.length < 5){
+            alert("A question must contain at least 5 words.");
+            return false;
+        }
+
+        // minimaal 2 antwoorden
+        if(answers.length <2) {
+            alert("You must add at least 2 possible answers.");
+            return false;
+        }
+        
+        // minstens 1 correct antwoord
+        var aantalCorrect = 0;
+        answers.forEach(a => {
+            if (a.isCorrect) {
+                aantalCorrect ++;
+            }
+        });
+        if (aantalCorrect<1){
+            alert("A question must have at least 1 correct answer.");
+            return false;
+        }
+
         // implement validation logic, return true if the input is valid
         // logic: questionText should have at least 5 characters, answers should have at least one correct answer
         return true
