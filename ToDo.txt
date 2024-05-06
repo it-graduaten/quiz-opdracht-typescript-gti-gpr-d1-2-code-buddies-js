@@ -1,15 +1,6 @@
 Features:
 
 SANDRA
-	Voorzie validatie van manueel toegevoegde vragen
-// index.ts
--	minimale lengte is 5 woorden 
--	minimaal 2 antwoorden 
--	1 correct antwoord
--	Na ingave worden de velden leeggemaakt en de vragenlijst ge-updatet.
-
-
-SANDRA
 	Voorzie validatie van een toegevoegde speler
 // index.ts
 -	naam is ingevuld & uniek
@@ -41,3 +32,15 @@ o	Het is de bedoeling dat de verschillende spelers na elkaar een nieuwe vraag kr
 -	Zorg dat de gebruiker een categorie kan kiezen (via API op te halen)
 -	Zorg dat de gebruiker een moeilijkheid kan kiezen (enum is gegeven), bouw hier een dropdown of andere selectie methode mee op.
 -	Type vragen is altijd: “multiple”
+
+
+==================================================
+IN ORDE
+
+SANDRA
+	Voorzie validatie van manueel toegevoegde vragen
+// index.ts
+-	minimale lengte is 5 woorden 
+-	minimaal 2 antwoorden 
+-	1 correct antwoord
+-	Na ingave worden de velden leeggemaakt en de vragenlijst ge-updatet.
