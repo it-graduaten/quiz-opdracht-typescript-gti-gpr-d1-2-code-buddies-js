@@ -1,0 +1,43 @@
+Features:
+
+SANDRA
+	Voorzie validatie van manueel toegevoegde vragen
+// index.ts
+-	minimale lengte is 5 woorden 
+-	minimaal 2 antwoorden 
+-	1 correct antwoord
+-	Na ingave worden de velden leeggemaakt en de vragenlijst ge-updatet.
+
+
+SANDRA
+	Voorzie validatie van een toegevoegde speler
+// index.ts
+-	naam is ingevuld & uniek
+-	Na ingave wordt de spelerslijst ge-updatet. 
+
+
+WANNES
+	Voorzie de logica om een antwoord te versturen, te controleren, de score (per speler) te updaten & door te gaan naar de volgende vraag & speler.
+// quiz.ts
+
+
+WANNES
+	Aan het einde van de quiz wordt het scorebord getoond. Voeg een knop toe om het spel te herstarten en terug te gaan naar het welkomscherm.
+//quiz.ts
+
+
+=============================================
+	De Quiz app is niet volledig voorzien om navigatie tijdens een lopende quiz toe te laten. Blokkeer de navigatie wanneer de quiz gestart is. Probeert de gebruiker toch te navigeren, toon dan een gepaste alert gedurende 5 seconden. Na 5 seconden verdwijnt de alert weer.
+// index.ts
+
+
+	Voeg multiplayer mode toe aan het spel. Zorg dat deze functionaliteit ook naar behoren werkt. 
+// index.ts , quiz.ts
+o	Het is de bedoeling dat de verschillende spelers na elkaar een nieuwe vraag krijgen, die ze voor zichzelf moeten beantwoorden. Er worden dus voor elke speler x-aantal nieuwe vragen gesteld. De spelers komen afwisselend aan de beurt. Als iedereen alle vragen heeft gehad, wordt het scorebord getoond.
+
+
+	Zorg ervoor dat de quizapp ondersteuning levert aan de API van https://opentdb.com 
+// index.ts , quiz.ts, QuestionService.ts(?)
+-	Zorg dat de gebruiker een categorie kan kiezen (via API op te halen)
+-	Zorg dat de gebruiker een moeilijkheid kan kiezen (enum is gegeven), bouw hier een dropdown of andere selectie methode mee op.
+-	Type vragen is altijd: “multiple”
